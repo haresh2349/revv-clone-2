@@ -4,7 +4,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 /* headerContainer style START */
 #headerContainer{
     width: 100%;
@@ -12,8 +11,10 @@
     top: 0;
     background-color: #fff;
     box-shadow: 0 -1px 8px 0 rgb(0 0 0 / 15%);
+    z-index: 100000;
 }
 
+/* navbar style start  */
 #navbar{
     margin: auto;
     display: flex;
@@ -65,22 +66,28 @@
     margin-left: 10px;
 
 }
+/* navbar style end  */
 
 /* headerContainer style END */
+
 
 /* searchbarContainer style START */
 #searchbarContainer{
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    background: #fff;
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
-    margin-top: 52px;
+    margin-top: 50px;
     padding: 15px 0;
 }
 #searchBar{
-    display: grid;
+    display: none;
+    /* display: grid; */
     grid-template-columns: repeat(4,1fr);
     margin-left: 100px;
     margin-right: 122px;
-    /* margin-top: 10px; */
 }
 
 #searchBar>div{
@@ -88,7 +95,7 @@
     font-weight: 700;
     padding: 10px;
 }
-.box{
+.city-box{
     display: flex;
 }
 
@@ -102,18 +109,21 @@
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
 }
 .startTime{
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
     border-right: 1px solid grey;
     color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
 }
 
 .endTime{
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
     color: rgba(0, 0, 0, 0.3);
+    font-size: 14px;
 }
 
 .search{
@@ -123,6 +133,7 @@
     background-color: #8ED0D2;
     color: white;
     font-size: 18px;
+    margin-left: -5px;
 }
 /* search bar style END  */
 
@@ -135,9 +146,11 @@
     width: 100%;
 }
 #advertiseContainer{
-    width: 100%;
+    width: 80%;
+    margin: auto;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 50px;
     padding-top: 50px;
     
 }
@@ -146,7 +159,7 @@
 #leftContainer{
     /* display: flex; */
     justify-content: center;
-    width: 40%;
+    width: 50%;
     background: #fff;
     padding: 30px;
     border-radius: 14px;
@@ -277,9 +290,9 @@
     margin: auto;
 }
 .searchBtn>button{
-    border: none;
     background-color: #A4DDDA;
-    padding: 19px;
+    border: none;
+    padding: 20px;
     margin-top: 30px;
     width: 100%;
     border-radius: 30px;
@@ -288,13 +301,14 @@
     color: white;
     font-weight: bolder;
 }
+
 /* left container style END  */
 
 /* right container style START */
 
 #rightContainer{
     margin-top: 130px;
-    padding-right: 100px;
+    margin-left: 100px;
 }
 #safeCars{
     width: 40%;
@@ -305,3 +319,335 @@
 }
 
 /* right container style END */
+
+/* mid container style start*/
+
+#midContainer{
+    background-color: #F1F4F8;
+}
+/* featured box style start */
+.header{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 20px;
+}
+
+.title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #A8B5C0;
+}
+.arrowIcon{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.arrowIcon>div{
+    margin: 0 10px;
+}
+
+.fa-solid{
+    font-size: 20px;
+}
+
+.fa-angle-left{
+    color: grey;
+}
+#discountBoxes{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(1,auto);
+    gap: 20px;
+    
+}
+
+#discountBoxes>div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+#discountBoxes>div>img{
+    width: 100%;
+    height: 100%;
+}
+/* featured box style end */
+
+/* safe car box style start */
+#safeCarBoxes{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(1,auto);
+    gap: 20px;
+}
+#safeCarBoxes>div{
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#safeCarBoxes>div>img{
+    height: 100%;
+    width: 100%;
+}
+/* safe car box style end */
+
+/* why revv box style start */
+#facilityBoxes{
+    width: 80%;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(1,auto);
+    gap: 20px;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px 10px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 7%);
+}
+
+.left{
+    width: 25%;
+
+}
+
+.left>div{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D0EDEC;
+    border-radius: 50%;
+}
+.left>div>img{
+    width: 100%;
+    height: 100%;
+}
+.right{
+    width: 84%;
+}
+
+h4{
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #122232;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #122232B3;
+}
+
+/* FAQs style START */
+#subContainer{
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 7%);
+}
+
+.viewAll>a{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #1CABA2;
+    font-weight: bold;
+}
+
+.viewAll>a:hover{
+    text-decoration: none;
+}
+.parentQue{
+    border-bottom: 0.5px solid rgb(241, 237, 237);
+}
+
+.question{
+    padding: 25px;
+}
+/* FAQs style END */
+
+
+/* Review style START */
+#customers{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(1,auto);
+    gap: 20px;
+}
+
+.review{
+    background: #fff;
+    padding: 16px 17px 43px 20px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.line{
+    margin: 0 -16px 0 -20px;
+    height: 0.5px;
+    border: none;
+    background-color: #f1f4f8;
+}
+.qoute{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 40px;
+    height: 30px;
+    right: 17px;
+    bottom: 16px;
+    position: absolute;
+}
+
+.para{
+    margin-top: 15px;
+}
+/* Review style END */
+
+/* application store style START  */
+
+#downlodAppChild{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    margin-top: 50px;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 7%);
+}
+
+/* leftsection style START  */
+#leftDiv{
+    width: 40%;
+}
+
+.h2Tag{
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #ABB7C1;
+
+}
+.techStore{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.appStore,.playStore{
+    width: 196px;
+    height: 62px;
+    margin: 10px 0;
+}
+
+.appStore>a>img{
+    width: 100%;
+}
+
+.playStore>a>img{
+    width: 100%;
+}
+/* leftsection style END  */
+
+/* right section style START  */
+.mobiles{
+    margin-top: 40px;
+}
+/* right section style END  */
+
+/* revv's Journey style START */
+
+#aboutRevv{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 7%);
+}
+
+#aboutRevv>div{
+    padding: 30px 0;
+}
+.emoji{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.emoji>img{
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    color: #1B1C24
+}
+/* revv's Journey style START */
+
+/* investors style START */
+#investorsContainer{
+}
+
+#investors{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+}
+
+.companyLogo{
+    width: 80%;
+    margin: auto;
+    padding: 25px;
+}
+
+.companyLogo>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#investors>div{
+    text-align: center;
+}
+
+.textContent{
+    color: #3D3E4A;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    
+}
